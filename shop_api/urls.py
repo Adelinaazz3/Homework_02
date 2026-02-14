@@ -34,24 +34,23 @@ def home(request):
 
    
 urlpatterns = [
-   
-   path('admin/', admin.site.urls),
-   
-   
-    path('products/', product_list_api_view, name='product-list'),
-    path('products/<int:id>/', product_detail_api_view, name='product-detail'),
+
+    path('admin/', admin.site.urls),
+
+    
     path('', home, name='home'),
 
+     
+    
+    path('api/v1/categories/', category_list_api_view, name='category-list'),
+    path('api/v1/categories/<int:id>/', category_detail_api_view, name='category-detail'),
 
 
-    path('categories/', category_list_api_view, name='category-list'),
-    path('categories/<int:id>/', category_detail_api_view, name='category-detail'),
-    path('', home, name='home'),
+    path('api/v1/reviews/', review_list_api_view, name='review-list'),
+    path('api/v1/reviews/<int:id>/', review_detail_api_view, name='review-detail'),
+
+    path('api/v1/products/reviews/', product_list_api_view, name='product-reviews-list'),
+    path('api/v1/products/<int:id>/',product_detail_api_view,name='product-detail'),
+]
 
 
-
-    path('reviews/', review_list_api_view, name='review-list'),
-    path('reviews/<int:id>/', review_detail_api_view, name='review-detail'),
-    path('', home , name='home'),
-
-] 
