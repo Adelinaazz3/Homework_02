@@ -46,6 +46,9 @@ urlpatterns = [
     path('api/v1/categories/<int:id>/', category_detail_api_view, name='category-detail'),
 
 
+    path('api/v1/products/', product_list_api_view, name='product-list'),
+    path('api/v1/products/<int:id>/', product_detail_api_view, name='product-detail'),
+
     path('api/v1/reviews/', review_list_api_view, name='review-list'),
     path('api/v1/reviews/<int:id>/', review_detail_api_view, name='review-detail'),
 
